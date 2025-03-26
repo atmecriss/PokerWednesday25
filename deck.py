@@ -11,8 +11,14 @@ class Card:
         self._suit = suit
         self._rank = rank
 
-    def __str__ (self):
-         return f"{self._rank}{self._suit}"
+    def __eq__(self, other):
+        return self.rank == other.rank
+
+    def __gt__(self, other):
+        return self.Ranks.index(self.rank) > self.Ranks.index(other.rank)
+
+    def __str__(self):
+        return f"{self._rank}{self._suit}"
 
     def __repr__(self):
         return self.__str__()
